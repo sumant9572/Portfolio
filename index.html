@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sumant Raj – Frontend Developer portfolio. Building responsive, interactive web interfaces with HTML, CSS & JavaScript." />
+  <meta name="author" content="Sumant Raj" />
+  <title>Sumant Raj — Frontend Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+  <!-- JS adds .js-ready to <html> immediately; CSS uses it to gate reveal animations -->
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <noscript>
+    <style>.reveal-up,.reveal-right{opacity:1!important;transform:none!important}</style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ░░ NOISE OVERLAY ░░ -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ░░ CURSOR ░░ -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <header class="nav-header" id="navHeader" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Sumant Raj – home">
+        <span class="logo-bracket">&lt;</span>SR<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about"   class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"  class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta" aria-label="Hire Sumant Raj">Hire Me</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+      <ul class="mobile-links" role="list">
+        <li><a href="#about"     class="mobile-link">About</a></li>
+        <li><a href="#skills"    class="mobile-link">Skills</a></li>
+        <li><a href="#projects"  class="mobile-link">Projects</a></li>
+        <li><a href="#education" class="mobile-link">Education</a></li>
+        <li><a href="#contact"   class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Hero introduction">
+      <!-- background grid -->
+      <div class="hero-grid" aria-hidden="true"></div>
+      <!-- ambient blobs -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge reveal-up" data-delay="0">
+            <span class="badge-dot"></span>
+            Available for opportunities
+          </div>
+
+          <h1 class="hero-heading reveal-up" data-delay="100">
+            <span class="heading-line">Hi, I'm</span>
+            <span class="heading-name">Sumant Raj</span>
+            <span class="heading-role">
+              <span class="role-prefix">—&nbsp;</span>
+              <span class="typewriter" id="typewriter"></span>
+              <span class="typewriter-cursor" aria-hidden="true">|</span>
+            </span>
+          </h1>
+
+          <p class="hero-desc reveal-up" data-delay="200">
+            Aspiring frontend developer crafting <em>responsive</em>, <em>interactive</em> web interfaces
+            with a focus on clean code, modern UI/UX, and pixel-perfect execution.
+          </p>
+
+          <div class="hero-actions reveal-up" data-delay="300">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="folder-open"></i>
+              View Projects
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i data-lucide="send"></i>
+              Get In Touch
+            </a>
+          </div>
+
+          <div class="hero-socials reveal-up" data-delay="400">
+            <a href="https://github.com/kingprince005" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+              <i data-lucide="github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/prince-kumar-0b9539294" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a href="mailto:sumantraj81242@gmail.com" class="social-link" aria-label="Send email">
+              <i data-lucide="mail"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo reveal-right" data-delay="200" aria-hidden="false">
+          <div class="photo-frame">
+            <div class="photo-glow" aria-hidden="true"></div>
+            <img src="sumant.jpeg" alt="Sumant Raj – Frontend Developer" class="photo-img" width="380" height="460" loading="eager" />
+            <div class="photo-border" aria-hidden="true"></div>
+          </div>
+          <!-- floating stat cards -->
+          <div class="stat-card stat-card-1" aria-label="Statistic: 3 plus projects built">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-card stat-card-2" aria-label="Statistic: 60 plus LeetCode problems solved">
+            <i data-lucide="code-2"></i>
+            <span class="stat-label">60+ LeetCode</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+        <span class="scroll-line"></span>
+        <span class="scroll-text">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════ -->
+    <section class="section about" id="about" aria-label="About me">
+      <div class="container">
+        <div class="section-label reveal-up">
+          <span class="label-line"></span>
+          <span class="label-text">01 / About</span>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <h2 class="section-heading reveal-up">
+              Crafting the web,<br /><span class="accent">one pixel at a time.</span>
+            </h2>
+            <p class="body-text reveal-up" data-delay="100">
+              I'm <strong>Sumant Raj</strong>, a frontend developer based in Patna, Bihar, currently pursuing
+              my <strong>MCA at Suresh Gyan Vihar University, Jaipur</strong>. I build user-first, 
+              performant web interfaces that prioritize clean structure, accessibility, and visual polish.
+            </p>
+            <p class="body-text reveal-up" data-delay="200">
+              My approach combines solid fundamentals in <strong>HTML5, CSS3, and JavaScript</strong> with
+              an eye for design — turning ideas into engaging digital experiences that users actually enjoy.
+              I'm passionate about responsive design, API integration, and continuously levelling up my craft.
+            </p>
+
+            <div class="about-details reveal-up" data-delay="300">
+              <div class="detail-item">
+                <i data-lucide="map-pin"></i>
+                <span>Patna, Bihar, India</span>
+              </div>
+              <div class="detail-item">
+                <i data-lucide="graduation-cap"></i>
+                <span>MCA – Pursuing (2025)</span>
+              </div>
+              <div class="detail-item">
+                <i data-lucide="mail"></i>
+                <a href="mailto:sumantraj81242@gmail.com">sumantraj81242@gmail.com</a>
+              </div>
+              <div class="detail-item">
+                <i data-lucide="phone"></i>
+                <a href="tel:+919572912023">+91 9572912023</a>
+              </div>
+            </div>
+
+            <a href="Sumant Raj - Frontend Dev.docx" download class="btn btn-outline reveal-up" data-delay="400">
+              <i data-lucide="download"></i>
+              Download Resume
+            </a>
+          </div>
+
+          <div class="about-stats reveal-right" data-delay="100">
+            <div class="stat-block">
+              <span class="stat-block-number">3+</span>
+              <span class="stat-block-desc">Projects Shipped</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-block-number">60+</span>
+              <span class="stat-block-desc">LeetCode Problems</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-block-number">4</span>
+              <span class="stat-block-desc">Certifications</span>
+            </div>
+            <div class="stat-block">
+              <span class="stat-block-number">∞</span>
+              <span class="stat-block-desc">Passion to Learn</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SKILLS
+    ══════════════════════════════════════ -->
+    <section class="section skills" id="skills" aria-label="Technical skills">
+      <div class="container">
+        <div class="section-label reveal-up">
+          <span class="label-line"></span>
+          <span class="label-text">02 / Skills</span>
+        </div>
+        <h2 class="section-heading reveal-up">
+          Tools I work with
+        </h2>
+        <p class="section-sub reveal-up" data-delay="100">
+          A focused toolkit built through real project work and continuous learning.
+        </p>
+
+        <div class="skills-grid">
+          <!-- Category: Frontend -->
+          <div class="skill-category reveal-up" data-delay="0">
+            <div class="skill-category-header">
+              <i data-lucide="layout"></i>
+              <h3>Frontend Development</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag tag-primary">HTML5</span>
+              <span class="skill-tag tag-primary">CSS3</span>
+              <span class="skill-tag tag-primary">JavaScript ES6+</span>
+              <span class="skill-tag">Tailwind CSS</span>
+              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag">CSS Grid</span>
+              <span class="skill-tag">Flexbox</span>
+              <span class="skill-tag">REST API Integration</span>
+            </div>
+          </div>
+
+          <!-- Category: Programming -->
+          <div class="skill-category reveal-up" data-delay="100">
+            <div class="skill-category-header">
+              <i data-lucide="code-2"></i>
+              <h3>Programming</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag tag-primary">JavaScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Problem Solving</span>
+            </div>
+          </div>
+
+          <!-- Category: Tools -->
+          <div class="skill-category reveal-up" data-delay="200">
+            <div class="skill-category-header">
+              <i data-lucide="wrench"></i>
+              <h3>Tools & Platforms</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag tag-primary">Git</span>
+              <span class="skill-tag tag-primary">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Firebase</span>
+            </div>
+          </div>
+
+          <!-- Category: Backend Basics -->
+          <div class="skill-category reveal-up" data-delay="300">
+            <div class="skill-category-header">
+              <i data-lucide="database"></i>
+              <h3>Database & Backend Basics</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">JSON</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proficiency bars -->
+        <div class="proficiency-bars reveal-up" data-delay="200">
+          <h3 class="bars-title">Core Proficiencies</h3>
+          <div class="bar-list">
+            <div class="bar-item">
+              <div class="bar-meta">
+                <span class="bar-name">HTML5 / CSS3</span>
+                <span class="bar-pct">90%</span>
+              </div>
+              <div class="bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 and CSS3 proficiency 90 percent">
+                <div class="bar-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-meta">
+                <span class="bar-name">JavaScript (ES6+)</span>
+                <span class="bar-pct">78%</span>
+              </div>
+              <div class="bar-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript proficiency 78 percent">
+                <div class="bar-fill" data-width="78"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-meta">
+                <span class="bar-name">Responsive Design</span>
+                <span class="bar-pct">85%</span>
+              </div>
+              <div class="bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design proficiency 85 percent">
+                <div class="bar-fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-meta">
+                <span class="bar-name">Python</span>
+                <span class="bar-pct">65%</span>
+              </div>
+              <div class="bar-track" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Python proficiency 65 percent">
+                <div class="bar-fill" data-width="65"></div>
+              </div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-meta">
+                <span class="bar-name">Git / GitHub</span>
+                <span class="bar-pct">75%</span>
+              </div>
+              <div class="bar-track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Git and GitHub proficiency 75 percent">
+                <div class="bar-fill" data-width="75"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PROJECTS
+    ══════════════════════════════════════ -->
+    <section class="section projects" id="projects" aria-label="Projects">
+      <!-- Ambient background blobs specific to this section -->
+      <div class="proj-blob proj-blob-1" aria-hidden="true"></div>
+      <div class="proj-blob proj-blob-2" aria-hidden="true"></div>
+
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="section-label reveal-up">
+          <span class="label-line"></span>
+          <span class="label-text">03 / Projects</span>
+        </div>
+        <h2 class="section-heading reveal-up">
+          Things I've <span class="proj-heading-accent">built</span>
+        </h2>
+        <p class="section-sub reveal-up" data-delay="100">
+          A curated selection of real-world projects — each one a chance to push skills forward
+          and ship something genuinely useful.
+        </p>
+
+        <div class="projects-grid">
+
+          <!-- ── Project 1: Furniture House ── -->
+          <article class="project-card pcard"
+                   data-delay="0"
+                   data-glow="59,130,246"
+                   aria-label="Furniture House Management System project">
+
+            <!-- gradient border overlay (animated on hover) -->
+            <div class="pcard-border" aria-hidden="true"></div>
+            <!-- mouse-follow cursor glow -->
+            <div class="pcard-cursor-glow" aria-hidden="true"></div>
+
+            <!-- Thumbnail -->
+            <div class="pcard-thumb">
+              <div class="pcard-thumb-inner">
+                <!-- SVG placeholder illustration -->
+                <svg class="pcard-thumb-svg" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="g1a" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.25"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="480" height="260" fill="url(#g1a)" rx="12"/>
+                  <rect x="32" y="28" width="120" height="90" rx="8" fill="#3b82f6" fill-opacity=".18"/>
+                  <rect x="32" y="28" width="120" height="90" rx="8" fill="none" stroke="#3b82f6" stroke-opacity=".3" stroke-width="1"/>
+                  <rect x="168" y="28" width="120" height="90" rx="8" fill="#7c3aed" fill-opacity=".15"/>
+                  <rect x="168" y="28" width="120" height="90" rx="8" fill="none" stroke="#7c3aed" stroke-opacity=".3" stroke-width="1"/>
+                  <rect x="304" y="28" width="144" height="90" rx="8" fill="#06b6d4" fill-opacity=".12"/>
+                  <rect x="304" y="28" width="144" height="90" rx="8" fill="none" stroke="#06b6d4" stroke-opacity=".25" stroke-width="1"/>
+                  <!-- sofa icon suggestion -->
+                  <path d="M160 160 Q160 148 172 148 L308 148 Q320 148 320 160 L320 192 Q320 200 312 200 L168 200 Q160 200 160 192 Z" fill="#3b82f6" fill-opacity=".25" stroke="#3b82f6" stroke-opacity=".5" stroke-width="1.5"/>
+                  <rect x="148" y="168" width="18" height="32" rx="9" fill="#60a5fa" fill-opacity=".4"/>
+                  <rect x="314" y="168" width="18" height="32" rx="9" fill="#60a5fa" fill-opacity=".4"/>
+                  <text x="240" y="232" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="monospace">Furniture House</text>
+                </svg>
+              </div>
+              <div class="pcard-thumb-overlay" aria-hidden="true"></div>
+            </div>
+
+            <!-- Card body -->
+            <div class="pcard-body">
+              <div class="pcard-meta">
+                <span class="pcard-category">
+                  <i data-lucide="shopping-cart"></i>E-Commerce
+                </span>
+                <span class="pcard-date">Nov 2025</span>
+              </div>
+
+              <h3 class="pcard-title">Furniture House Management System</h3>
+              <p class="pcard-desc">
+                A responsive web storefront for a furniture brand — featuring product discovery,
+                Add to Cart, Wishlist, and Cash on Delivery for a seamless shopping experience.
+              </p>
+
+              <div class="pcard-tags" aria-label="Technologies used">
+                <span class="pcard-tag">HTML5</span>
+                <span class="pcard-tag">CSS3</span>
+                <span class="pcard-tag">JavaScript</span>
+                <span class="pcard-tag">Responsive</span>
+              </div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="pcard-actions">
+              <a href="https://prince-sinha75.github.io/AI-Career-Intelligence-Platform/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="pcard-btn pcard-btn-primary"
+                 aria-label="View Furniture House live demo">
+                <i data-lucide="external-link"></i>
+                <span>Live Demo</span>
+                <span class="pcard-btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://github.com/kingprince005"
+                 target="_blank" rel="noopener noreferrer"
+                 class="pcard-btn pcard-btn-ghost"
+                 aria-label="View source code on GitHub">
+                <i data-lucide="github"></i>
+                <span>Source</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── Project 2: AI Career Platform (Featured) ── -->
+          <article class="project-card pcard pcard-featured"
+                   data-delay="130"
+                   data-glow="124,58,237"
+                   aria-label="AI Career Intelligence Platform project">
+
+            <div class="pcard-border" aria-hidden="true"></div>
+            <div class="pcard-cursor-glow" aria-hidden="true"></div>
+
+            <div class="pcard-featured-ribbon" aria-label="Featured project">
+              <i data-lucide="star"></i>Featured
+            </div>
+
+            <!-- Thumbnail -->
+            <div class="pcard-thumb">
+              <div class="pcard-thumb-inner">
+                <svg class="pcard-thumb-svg" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="g2a" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.4"/>
+                      <stop offset="100%" stop-color="#2563eb" stop-opacity="0.3"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="480" height="260" fill="url(#g2a)" rx="12"/>
+                  <!-- brain/network nodes -->
+                  <circle cx="240" cy="110" r="30" fill="#7c3aed" fill-opacity=".35" stroke="#a78bfa" stroke-opacity=".6" stroke-width="1.5"/>
+                  <circle cx="150" cy="80"  r="16" fill="#4f46e5" fill-opacity=".3" stroke="#818cf8" stroke-opacity=".5" stroke-width="1"/>
+                  <circle cx="330" cy="80"  r="16" fill="#4f46e5" fill-opacity=".3" stroke="#818cf8" stroke-opacity=".5" stroke-width="1"/>
+                  <circle cx="130" cy="150" r="12" fill="#7c3aed" fill-opacity=".25" stroke="#a78bfa" stroke-opacity=".4" stroke-width="1"/>
+                  <circle cx="350" cy="150" r="12" fill="#7c3aed" fill-opacity=".25" stroke="#a78bfa" stroke-opacity=".4" stroke-width="1"/>
+                  <circle cx="200" cy="175" r="10" fill="#6d28d9" fill-opacity=".25" stroke="#a78bfa" stroke-opacity=".35" stroke-width="1"/>
+                  <circle cx="280" cy="175" r="10" fill="#6d28d9" fill-opacity=".25" stroke="#a78bfa" stroke-opacity=".35" stroke-width="1"/>
+                  <!-- connecting lines -->
+                  <line x1="240" y1="110" x2="150" y2="80"  stroke="#a78bfa" stroke-opacity=".35" stroke-width="1"/>
+                  <line x1="240" y1="110" x2="330" y2="80"  stroke="#a78bfa" stroke-opacity=".35" stroke-width="1"/>
+                  <line x1="240" y1="110" x2="130" y2="150" stroke="#a78bfa" stroke-opacity=".25" stroke-width="1"/>
+                  <line x1="240" y1="110" x2="350" y2="150" stroke="#a78bfa" stroke-opacity=".25" stroke-width="1"/>
+                  <line x1="240" y1="110" x2="200" y2="175" stroke="#a78bfa" stroke-opacity=".2"  stroke-width="1"/>
+                  <line x1="240" y1="110" x2="280" y2="175" stroke="#a78bfa" stroke-opacity=".2"  stroke-width="1"/>
+                  <text x="240" y="232" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="monospace">AI Career Platform</text>
+                </svg>
+              </div>
+              <div class="pcard-thumb-overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="pcard-body">
+              <div class="pcard-meta">
+                <span class="pcard-category">
+                  <i data-lucide="brain-circuit"></i>AI / Web App
+                </span>
+                <span class="pcard-date">2025</span>
+              </div>
+              <h3 class="pcard-title">AI Career Intelligence Platform</h3>
+              <p class="pcard-desc">
+                Guides users through aptitude and interest assessments to surface smart,
+                personalised career recommendations with a modern responsive interface.
+              </p>
+              <div class="pcard-tags" aria-label="Technologies used">
+                <span class="pcard-tag">HTML5</span>
+                <span class="pcard-tag">CSS3</span>
+                <span class="pcard-tag">JavaScript</span>
+                <span class="pcard-tag">REST API</span>
+              </div>
+            </div>
+
+            <div class="pcard-actions">
+              <a href="https://prince-sinha75.github.io/AI-Career-Intelligence-Platform/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="pcard-btn pcard-btn-primary"
+                 aria-label="View AI Career Platform live demo">
+                <i data-lucide="external-link"></i>
+                <span>Live Demo</span>
+                <span class="pcard-btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://github.com/kingprince005"
+                 target="_blank" rel="noopener noreferrer"
+                 class="pcard-btn pcard-btn-ghost"
+                 aria-label="View source code on GitHub">
+                <i data-lucide="github"></i>
+                <span>Source</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── Project 3: Expense Tracker ── -->
+          <article class="project-card pcard"
+                   data-delay="260"
+                   data-glow="6,182,212"
+                   aria-label="Expense Tracker project">
+
+            <div class="pcard-border" aria-hidden="true"></div>
+            <div class="pcard-cursor-glow" aria-hidden="true"></div>
+
+            <!-- Thumbnail -->
+            <div class="pcard-thumb">
+              <div class="pcard-thumb-inner">
+                <svg class="pcard-thumb-svg" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="g3a" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#0e7490" stop-opacity="0.4"/>
+                      <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0.25"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="480" height="260" fill="url(#g3a)" rx="12"/>
+                  <!-- bar chart -->
+                  <rect x="60"  y="160" width="40" height="60"  rx="4" fill="#06b6d4" fill-opacity=".4" stroke="#22d3ee" stroke-opacity=".5" stroke-width="1"/>
+                  <rect x="120" y="130" width="40" height="90"  rx="4" fill="#06b6d4" fill-opacity=".5" stroke="#22d3ee" stroke-opacity=".5" stroke-width="1"/>
+                  <rect x="180" y="100" width="40" height="120" rx="4" fill="#06b6d4" fill-opacity=".6" stroke="#22d3ee" stroke-opacity=".6" stroke-width="1"/>
+                  <rect x="240" y="115" width="40" height="105" rx="4" fill="#0891b2" fill-opacity=".5" stroke="#22d3ee" stroke-opacity=".5" stroke-width="1"/>
+                  <rect x="300" y="85"  width="40" height="135" rx="4" fill="#06b6d4" fill-opacity=".7" stroke="#22d3ee" stroke-opacity=".7" stroke-width="1"/>
+                  <rect x="360" y="70"  width="40" height="150" rx="4" fill="#22d3ee" fill-opacity=".55" stroke="#67e8f9" stroke-opacity=".6" stroke-width="1"/>
+                  <!-- axis line -->
+                  <line x1="48" y1="220" x2="432" y2="220" stroke="#475569" stroke-opacity=".5" stroke-width="1"/>
+                  <!-- donut hint -->
+                  <circle cx="400" cy="88" r="36" fill="none" stroke="#06b6d4" stroke-opacity=".3" stroke-width="10"/>
+                  <circle cx="400" cy="88" r="36" fill="none" stroke="#22d3ee" stroke-opacity=".55" stroke-width="10" stroke-dasharray="90 136" stroke-dashoffset="0"/>
+                  <text x="240" y="246" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="monospace">Expense Tracker</text>
+                </svg>
+              </div>
+              <div class="pcard-thumb-overlay" aria-hidden="true"></div>
+            </div>
+
+            <div class="pcard-body">
+              <div class="pcard-meta">
+                <span class="pcard-category">
+                  <i data-lucide="bar-chart-2"></i>Finance
+                </span>
+                <span class="pcard-date">2025</span>
+              </div>
+              <h3 class="pcard-title">Expense Tracker</h3>
+              <p class="pcard-desc">
+                A responsive expense tracking app with transaction management, category filtering,
+                and visual summaries — all stored locally for instant offline use.
+              </p>
+              <div class="pcard-tags" aria-label="Technologies used">
+                <span class="pcard-tag">HTML5</span>
+                <span class="pcard-tag">CSS3</span>
+                <span class="pcard-tag">JavaScript</span>
+                <span class="pcard-tag">LocalStorage</span>
+              </div>
+            </div>
+
+            <div class="pcard-actions">
+              <a href="https://github.com/kingprince005"
+                 target="_blank" rel="noopener noreferrer"
+                 class="pcard-btn pcard-btn-primary"
+                 aria-label="View Expense Tracker on GitHub">
+                <i data-lucide="github"></i>
+                <span>View Code</span>
+                <span class="pcard-btn-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="https://github.com/kingprince005"
+                 target="_blank" rel="noopener noreferrer"
+                 class="pcard-btn pcard-btn-ghost"
+                 aria-label="View Expense Tracker source on GitHub">
+                <i data-lucide="external-link"></i>
+                <span>Demo</span>
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.projects-grid -->
+
+        <div class="projects-cta reveal-up" data-delay="200">
+          <a href="https://github.com/kingprince005" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <i data-lucide="github"></i>
+            View All on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         EDUCATION & CERTIFICATIONS
+    ══════════════════════════════════════ -->
+    <section class="section education" id="education" aria-label="Education and certifications">
+      <div class="container">
+        <div class="section-label reveal-up">
+          <span class="label-line"></span>
+          <span class="label-text">04 / Education & Certs</span>
+        </div>
+        <h2 class="section-heading reveal-up">
+          Academic journey &<br /><span class="accent">credentials</span>
+        </h2>
+
+        <div class="edu-cert-grid">
+
+          <!-- Education Timeline -->
+          <div class="edu-column">
+            <h3 class="column-title reveal-up">
+              <i data-lucide="graduation-cap"></i> Education
+            </h3>
+            <ol class="timeline" aria-label="Education timeline">
+
+              <li class="timeline-item reveal-up" data-delay="0">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2025 – Pursuing</span>
+                  <h4 class="timeline-title">Master of Computer Application (MCA)</h4>
+                  <p class="timeline-org">Suresh Gyan Vihar University, Jaipur</p>
+                  <p class="timeline-note">Currently in 3rd Semester</p>
+                </div>
+              </li>
+
+              <li class="timeline-item reveal-up" data-delay="100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2022 – 2025</span>
+                  <h4 class="timeline-title">Bachelor of Computer Application (BCA)</h4>
+                  <p class="timeline-org">Jagannath University, Jaipur</p>
+                </div>
+              </li>
+
+              <li class="timeline-item reveal-up" data-delay="200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2020 – 2022</span>
+                  <h4 class="timeline-title">Intermediate – ISC with PCM</h4>
+                  <p class="timeline-org">Govt. High School Naubatpur, Patna</p>
+                </div>
+              </li>
+
+              <li class="timeline-item reveal-up" data-delay="300">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <span class="timeline-period">2020</span>
+                  <h4 class="timeline-title">Matriculation</h4>
+                  <p class="timeline-org">Govt. High School Naubatpur, Patna</p>
+                </div>
+              </li>
+
+            </ol>
+          </div>
+
+          <!-- Certifications -->
+          <div class="cert-column">
+            <h3 class="column-title reveal-up" data-delay="100">
+              <i data-lucide="award"></i> Certifications & Achievements
+            </h3>
+            <div class="cert-list">
+
+              <div class="cert-card reveal-up" data-delay="0">
+                <div class="cert-icon">
+                  <i data-lucide="shield-check"></i>
+                </div>
+                <div class="cert-body">
+                  <h4 class="cert-title">PCAP – Programming Essentials in Python</h4>
+                  <p class="cert-issuer">Cisco Networking Academy</p>
+                  <span class="cert-date">July 2024</span>
+                </div>
+              </div>
+
+              <div class="cert-card reveal-up" data-delay="100">
+                <div class="cert-icon">
+                  <i data-lucide="shield-check"></i>
+                </div>
+                <div class="cert-body">
+                  <h4 class="cert-title">Introduction to Software Testing</h4>
+                  <p class="cert-issuer">SimpliLearn</p>
+                  <span class="cert-date">May 2025</span>
+                </div>
+              </div>
+
+              <div class="cert-card reveal-up" data-delay="200">
+                <div class="cert-icon">
+                  <i data-lucide="shield-check"></i>
+                </div>
+                <div class="cert-body">
+                  <h4 class="cert-title">Google AI Educator Series</h4>
+                  <p class="cert-issuer">Google</p>
+                  <span class="cert-date">5-hour completion – India</span>
+                </div>
+              </div>
+
+              <div class="cert-card reveal-up" data-delay="300">
+                <div class="cert-icon">
+                  <i data-lucide="code-2"></i>
+                </div>
+                <div class="cert-body">
+                  <h4 class="cert-title">LeetCode – 60+ Problems Solved</h4>
+                  <p class="cert-issuer">Arithmetic · Patterns · Strings · Arrays</p>
+                  <span class="cert-date">Ongoing</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════ -->
+    <section class="section contact" id="contact" aria-label="Contact me">
+      <div class="container">
+        <div class="section-label reveal-up">
+          <span class="label-line"></span>
+          <span class="label-text">05 / Contact</span>
+        </div>
+        <h2 class="section-heading reveal-up">
+          Let's build something<br /><span class="accent">together.</span>
+        </h2>
+        <p class="section-sub reveal-up" data-delay="100">
+          I'm open to internships, freelance projects, and full-time frontend roles. Drop me a message.
+        </p>
+
+        <div class="contact-grid">
+
+          <!-- Contact info -->
+          <div class="contact-info reveal-up" data-delay="0">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div class="contact-item-body">
+                <span class="contact-item-label">Email</span>
+                <a href="mailto:sumantraj81242@gmail.com" class="contact-item-value">sumantraj81242@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div class="contact-item-body">
+                <span class="contact-item-label">Phone</span>
+                <a href="tel:+919572912023" class="contact-item-value">+91 9572912023</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="contact-item-body">
+                <span class="contact-item-label">Location</span>
+                <span class="contact-item-value">Patna, Bihar, India</span>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <a href="https://github.com/kingprince005" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="GitHub profile">
+                <i data-lucide="github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/prince-kumar-0b9539294" target="_blank" rel="noopener noreferrer" class="social-pill" aria-label="LinkedIn profile">
+                <i data-lucide="linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <form class="contact-form reveal-up" id="contactForm" data-delay="150" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" autocomplete="name" required aria-required="true" />
+                <span class="form-error" id="nameError" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email" required aria-required="true" />
+                <span class="form-error" id="emailError" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required aria-required="true" />
+              <span class="form-error" id="subjectError" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project or opportunity..." required aria-required="true"></textarea>
+              <span class="form-error" id="messageError" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" aria-label="Send message">
+              <i data-lucide="send"></i>
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" aria-hidden="true">Sending…</span>
+            </button>
+            <div class="form-success" id="formSuccess" role="alert" aria-live="assertive">
+              <i data-lucide="check-circle"></i>
+              Message sent! I'll get back to you soon.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="footer-logo" aria-label="Back to top">
+          <span class="logo-bracket">&lt;</span>SR<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">
+          Designed &amp; built by <strong>Sumant Raj</strong> &copy; <span id="year"></span>
+        </p>
+        <div class="footer-socials">
+          <a href="https://github.com/kingprince005" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="https://www.linkedin.com/in/prince-kumar-0b9539294" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:sumantraj81242@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a href="#hero" class="back-to-top" aria-label="Back to top of page">
+          <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
